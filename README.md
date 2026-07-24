@@ -23,7 +23,7 @@ O banco de dados é composto por 4 tabelas conectadas:
 
 ## 📈 Principais Insights Extraídos
 
-### 1. Faturamento por Categoria
+### Faturamento por Categoria
 Apesar de ter menor volume unitário, a categoria de **Eletrônicos** lidera o faturamento total com **R$ 11.800,00** contra **R$ 2.120,00** em Acessórios.
 
 ```sql
