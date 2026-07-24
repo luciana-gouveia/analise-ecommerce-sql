@@ -1,39 +1,61 @@
-# 🛒 Análise de E-commerce & Comportamento de Clientes (SQL)
+# 📊 Análise de E-commerce com SQL
 
-Projeto prático de modelagem relacional, estruturação de banco de dados e análise de métricas de negócios em e-commerce utilizando **SQL (SQLite)**.
-
----
-
-## 🎯 Objetivos do Projeto
-- **Modelagem de Dados:** Estruturação de tabelas relacionais com chaves primárias e estrangeiras (`PK`/`FK`).
-- **Análise Financeira:** Identificação de faturamento total, ticket médio e categorias mais lucrativas.
-- **Segmentação de Clientes:** Mapeamento de clientes VIPs e análise de volume de pedidos.
+## 📌 Sobre o projeto  
+Este projeto tem como objetivo analisar dados de um e-commerce utilizando SQL, com foco em gerar insights relevantes para o negócio. A análise explora informações de vendas, produtos e comportamento dos clientes, apoiando a tomada de decisão baseada em dados.
 
 ---
 
-## 📊 Estrutura do Banco de Dados
-
-O banco de dados é composto por 4 tabelas conectadas:
-1. `clientes`: Cadastro de consumidores (id, nome, email, estado, data_cadastro).
-2. `produtos`: Catálogo de itens (id, nome_produto, categoria, preco).
-3. `pedidos`: Registro de transações (id, id_cliente, data_pedido, status).
-4. `itens_pedido`: Detalhamento dos produtos comprados (id, id_pedido, id_produto, quantidade, preco_unitario).
+## 🎯 Objetivos  
+- Explorar e entender a base de dados  
+- Realizar consultas SQL para responder perguntas de negócio  
+- Identificar padrões de vendas e comportamento do cliente  
+- Gerar insights estratégicos a partir dos dados  
 
 ---
 
-## 📈 Principais Insights Extraídos
+## 🛠️ Tecnologias utilizadas  
+- SQL  
+- MySQL (ou outro banco relacional, se aplicável)
 
-### Faturamento por Categoria
-Apesar de ter menor volume unitário, a categoria de **Eletrônicos** lidera o faturamento total com **R$ 11.800,00** contra **R$ 2.120,00** em Acessórios.
+---
 
-```sql
-SELECT 
-    p.categoria,
-    SUM(i.quantidade) AS total_itens_vendidos,
-    SUM(i.quantidade * i.preco_unitario) AS faturamento_total
-FROM produtos p
-JOIN itens_pedido i ON p.id_produto = i.id_produto
-JOIN pedidos ped ON i.id_pedido = ped.id_pedido
-WHERE ped.status = 'Concluído'
-GROUP BY p.categoria
-ORDER BY faturamento_total DESC;
+## 📂 Estrutura do projeto  
+- `queries.sql`: consultas desenvolvidas para análise  
+- `dataset/`: base de dados utilizada no projeto  
+- `README.md`: documentação do projeto  
+
+---
+
+## 🔎 Principais análises realizadas  
+- Faturamento total e por período  
+- Produtos mais vendidos  
+- Categorias com maior desempenho  
+- Análise de clientes (frequência de compra, volume gasto)  
+- Identificação de tendências de vendas  
+
+---
+
+## 📈 Insights gerados  
+- Identificação dos produtos com maior impacto no faturamento  
+- Períodos com maior volume de vendas  
+- Comportamento de compra dos clientes  
+- Oportunidades de melhoria no portfólio de produtos  
+
+---
+
+## 🚀 Como executar o projeto  
+1. Importar a base de dados para o banco de dados (MySQL ou similar)  
+2. Executar as queries disponíveis no arquivo `queries.sql`  
+3. Analisar os resultados gerados  
+
+---
+
+## 💡 Possíveis melhorias  
+- Criação de dashboards no Power BI  
+- Automatização das análises  
+- Integração com Python para análises mais avançadas  
+
+---
+
+### 👩🏻‍💻 Desenvolvido por: 
+**Luciana Gouveia**  
